@@ -11,7 +11,6 @@ $title = "Afficher des valeurs dans un tableau";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
-
   <body>
   <h1><?php echo $title ?></h1>
   <div>
