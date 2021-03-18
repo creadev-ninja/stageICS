@@ -20,7 +20,7 @@ $title = "Boucle recherche dans chaine caractère";
   <h2>Français</h2>
   <p>Ecrivez un programme qui comptera les caractères "r" dans le texte "w3resource".</p>
   <p></p><br>
-  <a href="https://www.w3resource.com/php-exercises/php-for-loop-exercise-5.php">Go To <?php echo $title ?></a> 
+  <a href="https://www.w3resource.com/php-exercises/php-for-loop-exercise-7.php">Go To <?php echo $title ?></a> 
   </div>
      <?php 
      
@@ -59,11 +59,7 @@ $title = "Boucle recherche dans chaine caractère";
           }
           
      }
-     echo "TOTAL : " .$cpt ." / ";
-     
-     
-     
-        
+     echo "TOTAL : " .$cpt ." / "; 
      ?>
   </body>
 </html>
