@@ -15,11 +15,11 @@ $title = "Boucle modulo damier";
   <h1><?php echo $title ?></h1>
   <div>
   <h2>Anglais</h2>
-  <p></p>
-  <p></p><br>
+  <p>Write a PHP script that creates the following table using for loops.</p>
+  <p>Add cellpadding="3px" and cellspacing="0px" to the table tag. </p><br>
   <h2>Français</h2>
-  <p></p>
-  <p></p><br>
+  <p>Écrivez un script PHP qui crée le tableau suivant en utilisant des boucles for.</p>
+  <p>Ajoutez cellpadding = "3px" et cellspacing = "0px" à la balise de table.</p><br>
   <a href="https://www.w3resource.com/php-exercises/php-for-loop-exercise-9.php">Go To <?php echo $title ?></a> 
   </div>
      <?php
