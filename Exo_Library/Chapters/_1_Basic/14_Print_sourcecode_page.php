@@ -26,12 +26,25 @@ $title = "Afficher le code source d'une page web";
      <?php
           echo "<hr>";
           $sCode = highlight_file("9_change_color_string.php");
+          //var_dump($sCode);
           echo $sCode;
           echo "<hr>";
           //var_dump($_GET);
-          print_r($_GET);
+          //print_r($_GET);
+          //echo "<hr>";
+
+          $page = file('9_change_color_string.php');
+          //var_dump($page);
+          /*
+          foreach($page as $numRow =>$row);{
+            //$recup = htmlspecialchars($row);
+            echo "N° : {$numRow} "; //." : " .$recup ."\r\n <br>";
+          }
+          //var_dump($page);*/
+          for($r=0; $r<sizeof($page); $r++){
+            //echo htmlspecialchars($page[$r]);
+            echo "N° : " .$r ." - " .htmlspecialchars($page[$r]) ."\r\n <br>";
+          }
      ?>
-     
-   
   </body>
 </html>
