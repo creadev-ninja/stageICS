@@ -2,6 +2,9 @@
 
 class Router{
      protected $url;
+     protected $localDos;
+     protected $path0;
+     
      /*
      public function __construct(){
           $this->url = $this->getUrl();
@@ -62,15 +65,21 @@ class Router{
          
 
           if($arrUrl['host']=='localhost' || $arrUrl['host']=='127.0.0.1'){
-               $arrUrl['dosLocal'] = $curtPage[1];
+               $this->localDos = $curtPage[1];
+               $arrUrl['localDos'] = $curtPage[1];
                unset($curtPage[1]);
           }
-          $cpt =1;
+          
           if(sizeof($curtPage)>0){
+               $pathZero = '/';
+               $cpt =1;
                foreach($curtPage as $cpVal){
                     $arrUrl ['path' .$cpt] = $cpVal;
+                    $pathZero .=$cpVal .'/';
                     $cpt++;
                }
+               $this->path0 = $pathZero;
+               $arrUrl['path0'] = $pathZero;
           }
           //return $curtPage;
           return $arrUrl;
