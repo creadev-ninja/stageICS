@@ -42,10 +42,6 @@ table { border-collapse: collapse; border-spacing: 0;}
      src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Italic.ttf) format("truetype");
 }
 
-
-
-
-
 /* -------------------------------------- BASES -------------------------------------- */
 html, *{max-width: 100%}/*Gestion taille Bootstrap*/
 /*body {
@@ -104,23 +100,22 @@ h3:first-letter{text-transform: uppercase;}
 /* Texte */
 p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1.6rem 1rem; line-height: 2.2rem;}
 .filter span a{text-transform: uppercase;}
-adress span{font-family: "StardosStencil-Bold"; }
-
-
 
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
-.wrapper{max-width: 1200px; min-height: 100%; margin: 0 auto;
+.wrapper{max-width: 1200px; min-height: 70vh; margin: 0 auto;}
+
       
-}
+
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
 /* ***** HEADER ***** */
-/*  HEADER DESK ***** */
-.top-header{max-height: 15%; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+
+.top-header{max-height: 20vh; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
 .top-header a img{width: 120px;}
 .social-header{width: 8vw; vertical-align: middle; padding: auto;}
 .social-header a img{width: 35px; margin: 0.5rem;}
 
+/*  NAV ***** */
 nav{width:65vw; background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);}
 nav ul {
      border: none;
@@ -139,7 +134,7 @@ nav ul li a {
 }   
 nav ul li a:hover {
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); color: rgba(0, 35, 122, 0.7);}
-/*  FIN HEADER DESK ***** */
+/*  FIN NAV ***** */
 
 
 
@@ -154,6 +149,8 @@ nav ul li a:hover {
 /* ***** FIN HEADER ***** */
 
 /* ***** MAIN ***** */
+
+main{display: flex; flex-direction: row; justify-content: space-around;}
 
 
 /* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
@@ -231,7 +228,7 @@ nav ul li a:hover {
 
 
 /* ***** FOOTER ***** */
-footer{box-sizing: border-box; padding: 2rem 0; max-height: 80px;   display: flex; flex-direction: row; justify-content: space-between;flex-wrap: nowrap; border: 0.1rem solid red;}
+footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: space-between;flex-wrap: nowrap; border: 0.1rem solid red; }
 .social-footer{width: 10%; height: 40px; display: flex; flex-direction: row;  justify-content: space-between; margin: auto;}
 .social-footer a img{padding: 0.5rem; width: 35px;}
 .footer-mentions{ width: 60%;display: flex; flex-wrap: nowrap; justify-content: space-between;}
