@@ -1,0 +1,15 @@
+ANIMAUX
+
+CHOUETTE
+unicode :  	 	
+U+1F989
+HTML-code : 	
+&#129417;
+CSS : \1F989
+
+BAT
+unicode :  	 	
+U+1F987
+HTML-code : 	
+&#129415;
+CSS : \1F987

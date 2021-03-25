@@ -1,0 +1,9 @@
+@charset "utf_8";
+
+body{
+     background: #111111; 
+     background: -moz-linear-gradient(45deg,  #111111 3%, #4c4c4c 13%, #666666 22%, #4c4c4c 30%, #2b2b2b 41%, #141111 50%, #141111 61%, #2c2c2c 74%, #666666 81%, #2c2c2c 87%, #131313 100%); 
+     background: -webkit-linear-gradient(45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     background: linear-gradient(45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#131313',GradientType=1 ); 
+}
