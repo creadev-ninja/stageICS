@@ -153,10 +153,9 @@ p, span {
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
 .wrapper {
-  display: grid;
-  place-content: center;
   max-width: 1200px;
-  min-height: 70vh; }
+  min-height: 70vh;
+  margin: 0 auto; }
   .wrapper .card {
     background-color: var(--main-bg-color);
     color: var(--main-txt-color); }
@@ -165,18 +164,15 @@ p, span {
 /* ***** HEADER ***** */
 .top-header {
   max-height: 20vh;
-  margin: 1rem;
+  margin: 0 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center; }
   .top-header a img {
     width: 120px; }
 
 .social-header {
-  position: fixed;
-  top: 1vh;
-  right: 0;
   width: 8vw;
   vertical-align: middle;
   padding: auto; }
@@ -187,7 +183,6 @@ p, span {
 /*  NAV ***** */
 nav {
   width: 65vw;
-  margin: auto;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%); }
   nav ul {
     border: none;

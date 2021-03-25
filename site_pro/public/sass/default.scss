@@ -100,7 +100,7 @@ p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1
 .filter span a{text-transform: uppercase;}
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
-.wrapper{display: grid;place-content: center; max-width: 1200px; min-height: 70vh; ;
+.wrapper{max-width: 1200px; min-height: 70vh; margin: 0 auto;
           & .card{
                background-color: var(--main-bg-color);
                color: var(--main-txt-color);
@@ -112,15 +112,14 @@ p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
 /* ***** HEADER ***** */
 
-.top-header{max-height: 20vh; margin:  1rem; display: flex; flex-direction: row; justify-content: space-around; align-items: center; & a img{width: 120px;}}
+.top-header{max-height: 20vh; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-between; align-items: center; & a img{width: 120px;}}
  
-.social-header{position: fixed; top: 1vh; right: 0; width: 8vw; vertical-align: middle; padding: auto; & a img{width: 35px; margin: 0.5rem;}}
+.social-header{width: 8vw; vertical-align: middle; padding: auto; & a img{width: 35px; margin: 0.5rem;}}
 
 
 /*  NAV ***** */
 nav{
-     width:65vw;
-     margin: auto; 
+     width:65vw; 
      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
      & ul {
           border: none;

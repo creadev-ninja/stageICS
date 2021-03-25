@@ -1,0 +1,150 @@
+
+This website uses cookies to ensure you get the best experience on our website. Learn more
+Got it!
+Tutoriel JavaScript
+Vue d'ensemble
+Variables
+Tableaux
+Fonctions
+PHP
+Eval
+Formulaire
+Expr. régulière
+Objets
+Window
+Evènements
+Widgets JavaScript
+Lightbox
+Bookmarklet
+Onglets
+Démo illusion
+Traductions
+Anglais
+
+
+Navigator en JavaScript, pour identifier le navigateur de l'internaute
+
+C'est un objet du navigateur disponibles depuis la version 1.0 de JavaScript, mais certaines propriétés et méthodes sont apparues ultérieurement.
+Les propriétés et méthodes de navigator
+
+Les propriétés standard sont reconnues par tous les navigateurs récents. Prendre garde aux majuscules.
+
+appName
+    Le nom générique de classe du navigateur. Netscape pour Firefox.
+appCodeName
+    Nom du navigateur. 
+appVersion
+    Plateforme (windows, etc.) et version du navigateur. 
+userAgent
+    Chaîne de caractères envoyée au serveur sur lequel on lit une page. 
+platform
+    Code de système d'exploitation, par exemple win32. 
+
+D'autres propriétés sont reconnues par Internet Explorer seul ou IE et Opera. Leur intérêt est donc très minime. Ce sont:
+
+    userLangage: (IE et Opera). Code de langue du système d'exploitation: fr, en...
+    appMinorVersion: Numéro de sous-version.
+    browserLanguage: Code de langue du navigateur: fr, en.
+    systemLanguage: Code de langue par défaut du système d'exploitation: fr, en.
+    cpuClass: Type de système, par exemple x86 pour les PC et Mac récents.
+    onLine: Navigateur en ligne ou non (il ne s'agit pas de la page).
+
+La propriété mimeTypes est reconnue par Mozilla uniquement et retourne dans un tableau les types mime supportés par le navigateur.
+
+Les méthodes de navigator:
+
+javaEnabled()
+    Retourne true si java est activé et si les applets peuvent fonctionner, false autrement.
+
+taintEnabled() n'est pas standard, retourne vrai si l'option est activée auquel cas les script peuvent délivrer des informations sur le système avec un risque de sécurité.
+Obtenir le numéro de version du navigateur
+
+Le numéro de version commercial est dans appVersion sur certains navigateur, mais on utilisera plutôt userAgent qui le contient dans tous.
+
+Il est dans le source de la démonstration qui suit. Ce n'est pas le numéro de version principal du navigateur, celui-ci suit la chaîne Firefox ou MSIE ou autre.
+
+Il peut être extrait de userAgent en fonction du nom du navigateur, avec la méthode indexOf de l'objet String. On utilisera ces chaînes pour identifier le navigateur et obtenir le numéro:
+
+Firefox/3.0.7
+MSIE 7.0
+Chrome/1.0.154.48
+Opera/9.64 
+Version/4.0 Safari/528.16
+
+Le script:
+
+var ua = navigator.userAgent;
+
+var x = ua.indexOf("MSIE");
+var y = 4;
+if (x == -1)
+{
+  x = ua.indexOf("Firefox");
+  y = 7;
+  if(x == -1)
+  {
+    if(x == -1)
+    {
+      x = ua.indexOf("Chrome");
+      y = 6;
+      if(x == -1)
+      {
+        x = ua.indexOf("Opera");
+        y = 5;
+        if(x == -1)
+        {
+          x = ua.indexOf("Safari");
+          if( x != -1)
+          {
+            x = ua.indexOf("Version");
+            y = 7;
+          }
+        }
+      }
+    }
+  }
+}
+
+if(x != -1) 
+{
+  y ++;
+  ua = ua.substring(x + y);
+  x = ua.indexOf(" ");
+  var x2 = ua.indexOf("(");
+  if(x2 > 0 && x2 < x) x = x2;
+    x2 = ua.indexOf(";");
+  if(x2 > 0 && x2 < x) x = x2;
+    if (x == -1) document.write("Error");
+
+  var v = ua.substring(0, x);
+ document.write("Version: " + v);
+}
+
+Ce script est contenu dans la démo et peut être réutilisé dans toute page Web.
+Démonstrations
+Démonstration: Prendre le numéro de version dans userAgent
+
+Code ci-dessus. Voir manuel en lien externe.
+userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0
+
+Error
+Version:
+Test de l'objet navigator dans les navigateurs
+
+Les propriétés de navigator et leurs valeurs, quelque soit la source et le version de votre navigateur, s'affichent ci-dessous et permettent de vérifier la compatibilité de l'objet.
+
+Doivent fonctionner sur tous les navigateurs:
+
+navigator.appName: Netscape
+
+navigator.appCodeName: Mozilla
+
+navigator.appVersion: 5.0 (Windows)
+
+navigator.platform: Win32
+
+navigator.cookieEnabled: true
+
+navigator.userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0
+
+navigator.javaEnabled(): false

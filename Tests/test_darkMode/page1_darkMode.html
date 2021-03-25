@@ -47,7 +47,6 @@
                document.getElementById("darktheme").checked = false;
           }
           
-
           check.addEventListener('click', function(){
                if(check.checked == true){
                     document.body.classList.add('dark-mode');
@@ -57,9 +56,7 @@
                     localStorage.removeItem('theme');
                }
           })
-
-          
-         
+      
           function themeSwitch(){
                var elem = document.body;
                elem.classList.toggle('dark-mode');

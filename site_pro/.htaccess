@@ -1,0 +1,4 @@
+# Redirect to public/
+RewriteEngine on
+RewriteRule ^public/(.*)$ localhost/projets/CREA_DEV/site_pro/$1 [R=301,L] 
+RewriteRule (.*) public/$1 [L]
