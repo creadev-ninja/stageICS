@@ -36,6 +36,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* -------------------------------------- VARIBLES -------------------------------------- */
+:root {
+  --main-bg-color:none;
+  --main-txt-color: #C9D5D5; }
+
+.theme-light {
+  --main-bg-color: #E9E6D5;
+  --main-txt-color:#020202; }
+
 /* -------------------------------------- FONTS ET TYPO -------------------------------------- */
 @font-face {
   font-family: "Digital-Desolation-Alternate";
@@ -147,6 +156,9 @@ p, span {
   max-width: 1200px;
   min-height: 70vh;
   margin: 0 auto; }
+  .wrapper .card {
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color); }
 
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
 /* ***** HEADER ***** */

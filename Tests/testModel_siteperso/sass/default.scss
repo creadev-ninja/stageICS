@@ -15,25 +15,33 @@ ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
 table { border-collapse: collapse; border-spacing: 0;}
-
+/* -------------------------------------- VARIBLES -------------------------------------- */
+:root{
+--main-bg-color:none;
+--main-txt-color: #C9D5D5;
+}
+.theme-light{
+     --main-bg-color: #E9E6D5;
+     --main-txt-color:#020202;
+}
 /* -------------------------------------- FONTS ET TYPO -------------------------------------- */
 @font-face {
      font-family: "Digital-Desolation-Alternate";
      src: url(../medias/) format("truetype");
  }
- @font-face {
+@font-face {
      font-family: "Digital-Desolation";
      src: url(../medias/fonts/digital_desolation/Digital-Desolation.ttf) format("truetype");
  }
- @font-face {
+@font-face {
       font-family: "BalsamiqSans-Regular";
       src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf) format("truetype");
  }
- @font-face {
+@font-face {
       font-family: "BalsamiqSans-Bold";
       src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf) format("truetype");
  }
- @font-face {
+@font-face {
       font-family: "BalsamiqSans-Italic";
       src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Italic.ttf) format("truetype");
  }
@@ -92,7 +100,12 @@ p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1
 .filter span a{text-transform: uppercase;}
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
-.wrapper{max-width: 1200px; min-height: 70vh; margin: 0 auto;}
+.wrapper{max-width: 1200px; min-height: 70vh; margin: 0 auto;
+          & .card{
+               background-color: var(--main-bg-color);
+               color: var(--main-txt-color);
+          }
+}
 
       
 
