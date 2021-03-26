@@ -36,7 +36,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* -------------------------------------- VARIBLES -------------------------------------- */
+/* -------------------------------------- VARIABLES -------------------------------------- */
 :root {
   --main-bg-color:none;
   --main-txt-color: #C9D5D5; }
@@ -46,9 +46,6 @@ table {
   --main-txt-color:#020202; }
 
 /* -------------------------------------- FONTS ET TYPO -------------------------------------- */
-@font-face {
-  font-family: "Digital-Desolation-Alternate";
-  src: url(../medias/) format("truetype"); }
 @font-face {
   font-family: "Digital-Desolation";
   src: url(../medias/fonts/digital_desolation/Digital-Desolation.ttf) format("truetype"); }
@@ -153,36 +150,71 @@ p, span {
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
 .wrapper {
-  display: grid;
-  place-content: center;
-  max-width: 1200px;
-  min-height: 70vh; }
-  .wrapper .card {
+  width: 100%;
+  min-height: 82vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0 10vw; }
+  .wrapper .card, .wrapper .ct-home {
     background-color: var(--main-bg-color);
-    color: var(--main-txt-color); }
+    color: var(--main-txt-color);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: none; }
+  .wrapper.ct-home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+  .wrapper .row {
+    width: 40%;
+    margin: 2rem 0; }
 
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
 /* ***** HEADER ***** */
+.logo {
+  position: fixed;
+  top: 1vh;
+  left: 1vw;
+  width: 120px;
+  margin: 0.3rem 0; }
+
 .top-header {
-  max-height: 20vh;
-  margin: 1rem;
+  height: 10vh;
+  margin: 0 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
-  .top-header a img {
-    width: 120px; }
 
 .social-header {
   position: fixed;
   top: 1vh;
-  right: 0;
+  right: 1vw;
   width: 8vw;
   vertical-align: middle;
   padding: auto; }
   .social-header a img {
     width: 35px;
-    margin: 0.5rem; }
+    margin: 0.3rem 0; }
+
+/*  BT-Tools ***** */
+#minimodal {
+  width: 200px;
+  margin: 10px;
+  background-color: rgba(233, 230, 213, 0.5);
+  color: green;
+  /*display:none;*/
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3 ease-in-out; }
+
+#minimodal.fade {
+  opacity: 1; }
 
 /*  NAV ***** */
 nav {
@@ -267,12 +299,11 @@ footer {
   max-height: 10vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  border: 0.1rem solid red; }
+  justify-content: flex-end;
+  flex-wrap: nowrap; }
 
 .footer-mentions {
-  width: 60%;
+  width: 40%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between; }
@@ -283,6 +314,15 @@ footer {
     margin: auto; }
 
 /* ***** FIN FOOTER ***** */
+/* ***** THEMES ***** */
+.dark-mode {
+  background: none;
+  background-color: purple;
+  color: white; }
+  .dark-mode .logo {
+    background: red; }
+
+/* ***** FIN THEMES ***** */
 /* -------------------------------------- STATES -------------------------------------- */
 /* -------------------------------------- THEMES -------------------------------------- */
 /* -------------------------------------- MEDIA QUERIES -------------------------------------- */

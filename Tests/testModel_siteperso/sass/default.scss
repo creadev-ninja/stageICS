@@ -15,7 +15,7 @@ ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
 table { border-collapse: collapse; border-spacing: 0;}
-/* -------------------------------------- VARIBLES -------------------------------------- */
+/* -------------------------------------- VARIABLES -------------------------------------- */
 :root{
 --main-bg-color:none;
 --main-txt-color: #C9D5D5;
@@ -25,10 +25,6 @@ table { border-collapse: collapse; border-spacing: 0;}
      --main-txt-color:#020202;
 }
 /* -------------------------------------- FONTS ET TYPO -------------------------------------- */
-@font-face {
-     font-family: "Digital-Desolation-Alternate";
-     src: url(../medias/) format("truetype");
- }
 @font-face {
      font-family: "Digital-Desolation";
      src: url(../medias/fonts/digital_desolation/Digital-Desolation.ttf) format("truetype");
@@ -49,6 +45,7 @@ table { border-collapse: collapse; border-spacing: 0;}
 /* -------------------------------------- BASES -------------------------------------- */
 html, *{max-width: 100%}
 /* Body */
+
 body {
      /* Body Font*/
      font-family: "BalsamiqSans-Regular";
@@ -95,26 +92,59 @@ h3{
 }
 
 
+
 /* Texte */
 p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1.6rem 1rem; line-height: 2.2rem;}
 .filter span a{text-transform: uppercase;}
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
-.wrapper{display: grid;place-content: center; max-width: 1200px; min-height: 70vh; ;
-          & .card{
+.wrapper{width: 100%; min-height: 82vh; display: flex;flex-direction: row;flex-wrap: wrap; justify-content: space-around; text-align: center; padding: 0 10vw;
+          & .card, .ct-home{
                background-color: var(--main-bg-color);
                color: var(--main-txt-color);
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: space-around;
+               border: none;
           }
+          &.ct-home {width: 100%;display: flex; flex-direction: row;flex-wrap: nowrap}
+          & .row{
+               width: 40%;
+               margin: 2rem 0;
+          }
+          
 }
 
       
 
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
 /* ***** HEADER ***** */
+.logo{
+     position: fixed; top: 1vh; left: 1vw; width: 120px;margin: 0.3rem 0;
+}
 
-.top-header{max-height: 20vh; margin:  1rem; display: flex; flex-direction: row; justify-content: space-around; align-items: center; & a img{width: 120px;}}
+.top-header{height: 10vh; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-around; align-items: center;}
  
-.social-header{position: fixed; top: 1vh; right: 0; width: 8vw; vertical-align: middle; padding: auto; & a img{width: 35px; margin: 0.5rem;}}
+.social-header{position: fixed; top: 1vh; right: 1vw; width: 8vw; vertical-align: middle; padding: auto; & a img{width: 35px; margin: 0.3rem 0;}
+}
+/*  BT-Tools ***** */
+
+#minimodal {
+     
+     width:200px; margin:10px;
+     background-color:rgba(233, 230, 213, 0.5); color:green;
+     //border-radius: 10px;
+     /*display:none;*/
+     opacity: 0;
+     -webkit-transition: opacity 0.3s ease-in-out;
+     transition: opacity 0.3 ease-in-out;
+}
+#minimodal.fade {
+      opacity:1;
+}
+
+
+
 
 
 /*  NAV ***** */
@@ -236,11 +266,23 @@ main{display: flex; flex-direction: row; justify-content: space-around;}
 
 
 /* ***** FOOTER ***** */
-footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: space-between;flex-wrap: nowrap; border: 0.1rem solid red; }
-
-.footer-mentions{ width: 60%;display: flex; flex-wrap: nowrap; justify-content: space-between; & a{width: 30%; display: inline-block; text-align: center; margin: auto;}}
+footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: flex-end;flex-wrap: nowrap; }
+//border: 0.1rem solid red; 
+.footer-mentions{ width: 40%;display: flex; flex-wrap: nowrap; justify-content: space-between; & a{width: 30%; display: inline-block; text-align: center; margin: auto;}}
  
 /* ***** FIN FOOTER ***** */
+
+/* ***** THEMES ***** */
+.dark-mode {
+     background: none;
+     background-color: purple;
+     color: white;
+
+     .logo {
+          background: red;
+     }
+     }
+/* ***** FIN THEMES ***** */
 /* -------------------------------------- STATES -------------------------------------- */
 
 
