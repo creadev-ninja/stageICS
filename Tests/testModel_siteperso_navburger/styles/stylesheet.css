@@ -1,0 +1,268 @@
+/* stylesheet  
+ * @author: Christelle BARRET (Crypto Beasty);
+ * @date: 24/03/2021;
+ * @package: Résumé;
+ * @title: Titre;
+ */
+
+/* https://meyerweb.com/eric/tools/css/reset/ */
+/* -------------------------------------- RESET MANUEL -------------------------------------- */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; text-decoration: none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
+body { line-height: 1;}
+ol,ul { list-style: none;}
+blockquote,q { quotes: none;}
+blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+
+
+
+    
+/* -------------------------------------- FONTS ET TYPO -------------------------------------- */
+
+@font-face {
+    font-family: "Digital-Desolation-Alternate";
+    src: url(../medias/) format("truetype");
+}
+@font-face {
+    font-family: "Digital-Desolation";
+    src: url(../medias/fonts/digital_desolation/Digital-Desolation.ttf) format("truetype");
+}
+@font-face {
+     font-family: "BalsamiqSans-Regular";
+     src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf) format("truetype");
+}
+@font-face {
+     font-family: "BalsamiqSans-Bold";
+     src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf) format("truetype");
+}
+@font-face {
+     font-family: "BalsamiqSans-Italic";
+     src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Italic.ttf) format("truetype");
+}
+
+/* -------------------------------------- BASES -------------------------------------- */
+html, *{max-width: 100%}/*Gestion taille Bootstrap*/
+/*body {
+     width: 100%; min-height: 100vh;
+     background: #111111;
+     background: -webkit-linear-gradient(45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     background: linear-gradient(45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     background-repeat: no-repeat;
+     animation: gradient 15s ease infinite;
+}*/
+body {
+     background: #111111; 
+	background: -webkit-linear-gradient(-45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     background: linear-gradient(-45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
+     
+     background-attachment: fixed;
+	background-size: 200% 200%;
+	animation: gradient 90s ease infinite;
+	animation-direction: alternate;
+}
+
+     @keyframes gradient {
+          0% {background-position: 0% 50%; }
+          50% {background-position: 100% 50%; }
+          100% {background-position: 0% 50%; } 
+     }
+ /*#4c4c4c 30%, #2b2b2b 41%, #666666 81%,*/
+
+
+
+/* fonts */
+body{
+    font-family: "BalsamiqSans-Regular";
+    /*font-size: 62.5%;*/
+    text-align: center;
+}
+/* Fin fonts */
+/* PB FONTS BOOTSTRAP https://getbootstrap.com/docs/4.3/content/typography/#responsive-font-sizes + https://getbootstrap.com/docs/4.3/content/reboot/#native-font-stack */
+/* txt-color*/
+.txt-light{color: #C9D5D5;}
+.txt-gold{color: #CDAD5F;}
+.txt-dark{color: #020202;}  
+
+/* bg-color */
+.bg-hotdark{background-color: #020202;}
+.bg-grey{background-color: #2A2A2A;}
+.bg-hotlight{background-color: #E9E6D5;}
+/* Fin bg-color */
+
+/* titre */
+h1{font-family: "Digital-Desolation";text-transform: uppercase; font-size: 3rem; color: #C9D5D5;box-sizing: border-box; padding: 4% 2%; line-height: 3.4rem; margin-top: -0.3%;}
+h2{font-family:"BalsamiqSans-Bold";color: #C9D5D5; font-size: 2.8rem; text-align: left; text-transform: uppercase;box-sizing: border-box; margin-bottom: 3rem;}
+h3{font-family:"BalsamiqSans-Regular";color: #C9D5D5; font-size: 2rem; text-align: left; box-sizing: border-box; align-self: center;display: inline-block;}
+h3:first-letter{text-transform: uppercase;}
+
+/* Texte */
+p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1.6rem 1rem; line-height: 2.2rem;}
+.filter span a{text-transform: uppercase;}
+
+
+/* -------------------------------------- LAYOUT -------------------------------------- */
+.wrapper{max-width: 1200px; min-height: 70vh; margin: 0 auto;}
+
+      
+
+/*border: 4mm ridge rgba(170, 50, 220, .6);*/
+/* ***** HEADER ***** */
+
+.top-header{max-height: 20vh; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+.top-header a img{width: 120px;}
+.social-header{width: 8vw; vertical-align: middle; padding: auto;}
+.social-header a img{width: 35px; margin: 0.5rem;}
+
+/*  NAV ***** */
+nav{width:65vw; background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);}
+nav ul {
+     border: none;
+     text-align: center;
+     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 1px 0px 0 rgba(255, 255, 255, 0.6);
+}   
+nav ul li {display: inline-block;}   
+nav ul li a {
+     padding: 18px;
+     font-family: "BalsamiqSans-Regular";
+     text-transform:uppercase;
+     color: #C9D5D5;
+     font-size: 18px;
+     text-decoration: none;
+     display: block;
+}   
+nav ul li a:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); color: rgba(0, 35, 122, 0.7);}
+/*  FIN NAV ***** */
+
+
+
+
+
+
+
+/* HEADER MOBILE ***** */
+.topheader-mobile{width: 75%; height: 100px; display: flex; flex-direction: row; justify-content: space-around;}
+.box-headmob{width: 100%; height: 100vw;}
+
+/* ***** FIN HEADER ***** */
+
+/* ***** MAIN ***** */
+
+main{display: flex; flex-direction: row; justify-content: space-around;}
+
+
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
+
+
+/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
+
+
+/* ***** FIN MAIN ***** */
+
+
+
+/* -------------------------------------- MODULES -------------------------------------- */
+    /* calcul des pourcentages
+    * élément / parent x 100 = resultat en %*/
+
+    /* Calcul du ratio d'aspect
+	 * hauteur / largeur x 100 */
+/* ***** HEADER ***** */
+/*  HEADER DESK ***** */
+/* top-header */
+
+/* fin top-header */
+/* nav */
+
+/* Fin nav */
+
+/*  FIN HEADER DESK ***** */
+/*  HEADER MOBILE ***** */
+
+/*  FIN HEADER MOBILE ***** */
+/* ***** FIN HEADER ***** */
+/* nav */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION start //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION end //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* ***** MAIN ***** */
+/* ------ PAGE ACCUEIL ---------------------------------------------------------------------------- */
+/*  ACTIVITE ***** */
+
+/*  FIN  ACTIVITE ***** */
+/* ------ FIN PAGE ACCUEIL ---------------------------------------------------------------------------- */
+
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
+
+
+/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
+
+/* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+
+/* ------ FIN PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+
+
+/* ***** FIN MAIN ***** */
+
+
+
+
+
+/* ***** FOOTER ***** */
+footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: space-between;flex-wrap: nowrap; border: 0.1rem solid red; }
+.social-footer{width: 10%; height: 40px; display: flex; flex-direction: row;  justify-content: space-between; margin: auto;}
+.social-footer a img{padding: 0.5rem; width: 35px;}
+.footer-mentions{ width: 60%;display: flex; flex-wrap: nowrap; justify-content: space-between;}
+.footer-mentions a{width: 30%; display: inline-block; text-align: center; margin: auto;}
+/* ***** FIN FOOTER ***** */
+/* -------------------------------------- STATES -------------------------------------- */
+
+
+/* -------------------------------------- THEMES -------------------------------------- */
+
+
+/* -------------------------------------- MEDIA QUERIES -------------------------------------- */
+/* MOBILE  ----------- */
+@media screen and (min-width: 200px) and (max-width: 375px){
+    
+}
+
+/* TABLET  ----------- */
+@media screen and (min-width: 376px) and (max-width: 989px){
+    
+}
+
+/* NETBOOK  ----------- */
+@media screen and (min-width: 990px) and (max-width: 1199px){
+    
+}
+
+/* DESKTOP  ----------- */
+@media screen and (min-width: 1200px) and (max-width: 1600px){
+        
+}
+    
+/* Long life and prosper */
+@media screen and (min-width: 1601px){
+    
+}
+

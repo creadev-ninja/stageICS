@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dark mode T2</title>
+     <style type="text/css">
+          body {
+          padding: 25px;
+          background-color: goldenrod;
+          color: black;
+          font-size: 25px;
+          }
+
+          .dark-mode {
+          background-color: purple;
+          color: white;
+          }
+     </style>
+</head>
+<body>
+     <h1>Dark Theme T2</h1>
+
+     <input type="checkbox" id="darktheme" name="darktheme" >
+     <label for="scales">Dark-Thème</label>
+
+     <ul>
+          <li><a href="page1_darkMode.html">page1_darkMode</a></li>
+          <li><a href="page2_darkM.html">page2_darkM</a></li>
+          <li><a href="page3_darkM.html">page3_darkM</a></li>
+     </ul>
+
+
+     
+     <script type="text/javascript">
+          var check = document.getElementById("darktheme");
+          var body = document.body;
+          const currTheme = localStorage.getItem("theme");
+
+          if(currTheme == 'dark'){
+               document.body.classList.add('dark-mode');
+          }else{
+               document.body.classList.remove('dark-mode');
+          }
+          
+
+          check.addEventListener('click', function(){
+               if(check.checked == true){
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+               }else{
+                    document.body.classList.remove('dark-mode');
+                    localStorage.removeItem('theme');
+               }
+          })
+         
+          function themeSwitch(){
+               var elem = document.body;
+               elem.classList.toggle('dark-mode');
+          }
+     </script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+@charset "UTF-8";
+/* stylesheet  
+ * @author: Christelle BARRET (Crypto Beasty);
+ * @date: 24/03/2021;
+ * @package: Résumé;
+ * @title: Titre;
+ */
+/* https://meyerweb.com/eric/tools/css/reset/ */
+/* -------------------------------------- RESET MANUEL -------------------------------------- */
+* {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #C9D5D5; }
+
+/* -------------------------------------- VARIABLES -------------------------------------- */
+:root {
+  --main-bg-color:none;
+  --main-txt-color: #C9D5D5; }
+
+.theme-light {
+  --main-bg-color: #E9E6D5;
+  --main-txt-color:#020202; }
+
+/* -------------------------------------- FONTS ET TYPO -------------------------------------- */
+@font-face {
+  font-family: "Digital-Desolation";
+  src: url(../medias/fonts/digital_desolation/Digital-Desolation.ttf) format("truetype"); }
+@font-face {
+  font-family: "BalsamiqSans-Regular";
+  src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf) format("truetype"); }
+@font-face {
+  font-family: "BalsamiqSans-Bold";
+  src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf) format("truetype"); }
+@font-face {
+  font-family: "BalsamiqSans-Italic";
+  src: url(../medias/fonts/Balsamiq_Sans/BalsamiqSans-Italic.ttf) format("truetype"); }
+/* -------------------------------------- BASES -------------------------------------- */
+html, * {
+  max-width: 100%; }
+
+/* Body */
+body {
+  /* Body Font*/
+  width: 100%;
+  font-family: "BalsamiqSans-Regular";
+  text-align: center;
+  color: #C9D5D5;
+  /* Body Background*/
+  background: #111111;
+  background: -webkit-linear-gradient(-45deg, #111111 3%, #4c4c4c 13%, #666666 22%, #4c4c4c 30%, #2b2b2b 41%, #141111 50%, #141111 61%, #2c2c2c 74%, #666666 81%, #2c2c2c 87%, #131313 100%);
+  background: linear-gradient(-45deg, #111111 3%, #4c4c4c 13%, #666666 22%, #4c4c4c 30%, #2b2b2b 41%, #141111 50%, #141111 61%, #2c2c2c 74%, #666666 81%, #2c2c2c 87%, #131313 100%);
+  /* Body animation*/
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: gradient 180s ease infinite;
+  animation-direction: alternate; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+/*#4c4c4c 30%, #2b2b2b 41%, #666666 81%,*/
+/* txt-color*/
+.txt-light {
+  color: #C9D5D5; }
+
+.txt-gold {
+  color: #d6a956; }
+
+.txt-dark {
+  color: #020202; }
+
+/* bg-color */
+.bg-hotdark {
+  background-color: #020202; }
+
+.bg-grey {
+  background-color: #2A2A2A; }
+
+.bg-hotlight {
+  background-color: #E9E6D5; }
+
+/* Fin bg-color */
+/* titre */
+h1, h2 {
+  font-family: "Digital-Desolation";
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  line-height: 3rem;
+  letter-spacing: 0.3rem; }
+
+h3 {
+  font-family: "BalsamiqSans-Bold";
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  line-height: 2rem; }
+
+h4 {
+  line-height: 2rem;
+  margin: 2rem auto;
+  font-family: "BalsamiqSans-Regular";
+  color: #CDAD5F;
+  font-size: 0.8rem;
+  text-align: left;
+  box-sizing: border-box;
+  display: inline; }
+  h4:first-letter {
+    text-transform: uppercase; }
+
+/* Texte */
+.filter span a {
+  text-transform: uppercase; }
+
+img {
+  filter: drop-shadow(0 0 1rem black);
+  height: 100%; }
+
+/* -------------------------------------- LAYOUT -------------------------------------- */
+/* ***** HEADER ***** */
+header {
+  margin: 0.5rem; }
+
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  margin: 0.3rem 0;
+  z-index: 500; }
+
+.top-header {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 0;
+  z-index: 400; }
+
+.social-header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  vertical-align: middle;
+  padding: auto;
+  z-index: 500; }
+  .social-header a img {
+    width: 50%;
+    margin: 0.4rem 0; }
+
+/*  BT-Tools / Modal ***** */
+#minimodal {
+  width: 300px;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 0.6rem;
+  overflow: visible;
+  background-color: rgba(233, 230, 213, 0.5);
+  opacity: 0;
+  display: none;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3 ease-in-out; }
+  #minimodaldiv {
+    margin: 0;
+    padding: 6%; }
+
+#minimodal.fade {
+  opacity: 1;
+  display: block; }
+
+/*  BT-Themes ***** */
+.toggle_switch {
+  width: 30px;
+  height: 45px;
+  position: relative; }
+
+input[type="checkbox"].switch_3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: 0;
+  z-index: 1; }
+
+svg.checkbox .outer-ring {
+  stroke-dasharray: 375;
+  stroke-dashoffset: 375;
+  -webkit-animation: resetRing .35s ease-in-out forwards;
+  animation: resetRing .35s ease-in-out forwards; }
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .outer-ring {
+  -webkit-animation: animateRing .35s ease-in-out forwards;
+  animation: animateRing .35s ease-in-out forwards; }
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_checked {
+  opacity: 1;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg); }
+
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_unchecked {
+  opacity: 0;
+  -webkit-transform: translateX(-200%) rotate(180deg);
+  transform: translateX(-200%) rotate(180deg); }
+
+svg.checkbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+svg.checkbox .is_checked {
+  opacity: 0;
+  fill: #d6a956;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(200%) rotate(45deg);
+  transform: translateX(200%) rotate(45deg);
+  -webkit-transition: all .35s;
+  transition: all .35s; }
+
+svg.checkbox .is_unchecked {
+  opacity: 1;
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
+  -webkit-transition: all .35s;
+  transition: all .35s; }
+
+@-webkit-keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #d6a956; } }
+@keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #d6a956; } }
+@-webkit-keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043; } }
+@keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043; } }
+/*  FIN BT-Themes ***** */
+/*  FIN BT-Tools / Modal ***** */
+/*  NAV ***** */
+.site-nav {
+  width: 100%;
+  height: 100%;
+  margin: 0.5rem auto;
+  padding: 1rem auto;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0) 100%);
+  height: 0px;
+  overflow: hidden; }
+  .site-nav ul {
+    border: none;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); }
+    .site-nav ul li :last-child {
+      /* removes border from last nav li */
+      border: none; }
+    .site-nav ul li a {
+      display: block;
+      padding: 0.3rem 0;
+      /* padding for links */
+      margin-top: 1rem;
+      font-family: "BalsamiqSans-Regular";
+      color: black;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block; }
+
+.site-nav a:hover, .site-nav a:focus, .site-nav a:active {
+  color: #13AFF0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1); }
+
+.site-nav-open {
+  height: auto;
+  width: 100%; }
+
+/*--------------------------------------*/
+/*   ICON styling for smaller screens   */
+/*--------------------------------------*/
+/*--------------------------------------*/
+/* Acts as btn & contains hamburger     */
+/*--------------------------------------*/
+.menu-toggle {
+  padding: 1em;
+  margin: 0 auto;
+  position: absolute;
+  top: 1vh;
+  cursor: pointer; }
+
+/*--------------------------------------*/
+/*   Styles the hamburger for btn       */
+/*--------------------------------------*/
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background: #13AFF0;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 2px;
+  transition: all ease-in-out 500ms; }
+
+/*--------------------------------------*/
+/* Instance of hamburger (top line)     */
+/*--------------------------------------*/
+.hamburger::before {
+  transform: translateY(-7px); }
+
+/*--------------------------------------*/
+/* Instance of hamburger bottom line    */
+/*--------------------------------------*/
+.hamburger::after {
+  transform: translateY(4px); }
+
+/*--------------------------------------*/
+/* When Nav menu is open, hamburger = X */
+/*--------------------------------------*/
+.open .hamburger {
+  transform: rotate(45deg);
+  background: #d6a956; }
+
+/*--------------------------------------*/
+/* Before hamburger line is invisible   */
+/*--------------------------------------*/
+.open .hamburger::before {
+  opacity: 0; }
+
+/*--------------------------------------*/
+/* Animates after line to create an X   */
+/*--------------------------------------*/
+.open .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+  background: #d6a956; }
+
+/*  FIN NAV ***** */
+/* ***** FIN HEADER ***** */
+/* ***** MAIN ***** */
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.wrapper {
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 2rem; }
+
+.row {
+  margin: 0.2rem 0;
+  padding: 1rem 0;
+  width: 90vw;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 100%);
+  display: flex;
+  flex-direction: raw;
+  justify-content: space-around; }
+  .row .img-card {
+    width: 30%; }
+    .row .img-cardimg {
+      max-width: 100%; }
+  .row .card-body section {
+    margin: auto 0;
+    text-align: center;
+    min-height: 70%; }
+
+.img-card, .card-body {
+  display: flex; }
+
+.img-card-brackets {
+  height: 20em;
+  margin: 0 1rem; }
+  .img-card-brackets img {
+    height: 100%; }
+
+.typewriter {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  padding: 0 auto;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite; }
+  .typewriter .tw2 {
+    animation-delay: 7s; }
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+/* The typewriter cursor effect */
+/* ***** FIN MAIN ***** */
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
+/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
+/* ***** FIN MAIN ***** */
+/* -------------------------------------- MODULES -------------------------------------- */
+/* calcul des pourcentages
+* élément / parent x 100 = resultat en %*/
+    /* Calcul du ratio d'aspect
+	 * hauteur / largeur x 100 */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION start //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// MODIFICATION end //////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* ***** MAIN ***** */
+/* ------ PAGE ACCUEIL ---------------------------------------------------------------------------- */
+/*  ACTIVITE ***** */
+/*  FIN  ACTIVITE ***** */
+/* ------ FIN PAGE ACCUEIL ---------------------------------------------------------------------------- */
+/* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+/* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
+/* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+/* ------ FIN PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+/* ***** FIN MAIN ***** */
+/* ***** FOOTER ***** */
+footer {
+  box-sizing: border-box;
+  padding: 2rem 0;
+  max-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+
+.footer-mentions {
+  width: 45%;
+  display: flex;
+  justify-content: space-between; }
+  .footer-mentions a {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    font-size: 0.8rem; }
+
+/* ***** FIN FOOTER ***** */
+/* ***** THEMES ***** */
+.dark-mode {
+  background: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  color: black; }
+  .dark-mode a {
+    color: black; }
+  .dark-mode img {
+    filter: none;
+    height: 100%; }
+
+/* ***** FIN THEMES ***** */
+/* -------------------------------------- MEDIA QUERIES -------------------------------------- */
+/* MOBILE  ----------- */
+@media screen and (max-width: 799px) {
+  .row {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 2rem 0; }
+    .row .img-card {
+      width: 50vh; }
+      .row .img-card img {
+        width: 50%;
+        margin: 1rem auto; }
+    .row .img-card-brackets {
+      display: none; }
+    .row .card-body section {
+      margin: 1rem 0; }
+
+  .footer-mentions {
+    width: 100%;
+    margin-top: 1rem; } }
+/* TABLET  ----------- */
+@media screen and (min-width: 800px) {
+  .menu-toggle {
+    /* Removes hamburger menu */
+    display: none; }
+
+  .site-nav {
+    /* Positions site nav & removes background color */
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    position: relative;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.342) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+    float: right;
+    z-index: 1000; }
+    .site-nav ul li {
+      display: inline-block;
+      border: none; }
+      .site-nav ul li a {
+        /* Adds spacing between Nav links */
+        padding: 0;
+        margin-left: 3em;
+        margin-top: 0;
+        color: #C9D5D5; }
+
+  .site-nav a:hover, .site-nav a:focus, .site-nav a:active {
+    /* Changes font color to light blue */
+    background: transparent;
+    font-weight: 800;
+    color: #13AFF0; } }
+/* NETBOOK  ----------- */
+/* DESKTOP  ----------- */
+/* Long life and prosper */
+
+/*# sourceMappingURL=default.css.map */

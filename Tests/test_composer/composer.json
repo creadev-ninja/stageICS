@@ -1,0 +1,12 @@
+{
+    "name": "test/composer",
+    "require": {
+        "michelf/php-markdown": "^1.9"
+    },
+    "authors": [
+        {
+            "name": "BARRETCHRIS",
+            "email": "christelle.barret.poirot@gmail.com"
+        }
+    ]
+}

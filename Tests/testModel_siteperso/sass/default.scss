@@ -8,6 +8,7 @@
 
 /* https://meyerweb.com/eric/tools/css/reset/ */
 /* -------------------------------------- RESET MANUEL -------------------------------------- */
+*{box-sizing: border-box;}
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; text-decoration: none;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
 body { line-height: 1;}
@@ -15,6 +16,7 @@ ol,ul { list-style: none;}
 blockquote,q { quotes: none;}
 blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
 table { border-collapse: collapse; border-spacing: 0;}
+a{text-decoration: none; color: #C9D5D5;}
 /* -------------------------------------- VARIABLES -------------------------------------- */
 :root{
 --main-bg-color:none;
@@ -48,8 +50,10 @@ html, *{max-width: 100%}
 
 body {
      /* Body Font*/
+     width: 100%;
      font-family: "BalsamiqSans-Regular";
      text-align: center;
+     color:  #C9D5D5;;
      /* Body Background*/
      background: #111111; 
 	background: -webkit-linear-gradient(-45deg,  #111111 3%,#4c4c4c 13%,#666666 22%,#4c4c4c 30%,#2b2b2b 41%,#141111 50%,#141111 61%,#2c2c2c 74%,#666666 81%,#2c2c2c 87%,#131313 100%); 
@@ -57,7 +61,7 @@ body {
      /* Body animation*/
      background-attachment: fixed;
 	background-size: 200% 200%;
-	animation: gradient 90s ease infinite;
+	animation: gradient 180s ease infinite;
 	animation-direction: alternate;
 }
      @keyframes gradient {
@@ -68,7 +72,7 @@ body {
  /*#4c4c4c 30%, #2b2b2b 41%, #666666 81%,*/
 /* txt-color*/
 .txt-light{color: #C9D5D5;}
-.txt-gold{color: #CDAD5F;}
+.txt-gold{color: #d6a956;}
 .txt-dark{color: #020202;}  
 
 /* bg-color */
@@ -78,39 +82,78 @@ body {
 /* Fin bg-color */
 
 /* titre */
-h1{font-family: "Digital-Desolation";text-transform: uppercase; font-size: 3rem; color: #C9D5D5;box-sizing: border-box; padding: 4% 2%; line-height: 3.4rem; margin-top: -0.3%;}
-h2{font-family:"BalsamiqSans-Bold";color: #C9D5D5; font-size: 2.8rem; text-align: left; text-transform: uppercase;box-sizing: border-box; margin-bottom: 3rem;}
-h3{
+h1{display: none;}
+h2{font-family: "Digital-Desolation";text-transform: uppercase; font-size: 1.6vw; box-sizing: border-box; padding: 4% 2%; line-height: 3.8rem; letter-spacing: 0.3rem;}
+h3{font-family:"BalsamiqSans-Bold";font-size: 2vw; text-transform: uppercase;box-sizing: border-box; margin: 3rem;}
+h4{
+     margin: 2.6rem;
      font-family:"BalsamiqSans-Regular";
-     color: #C9D5D5; 
-     font-size: 2rem; 
+     color:  #CDAD5F; 
+     font-size: 1.2vw; 
      text-align: left; 
      box-sizing: border-box; 
      align-self: center;
      display: inline-block;
      &:first-letter{text-transform: uppercase;}
 }
-
+.typewriter h2 {
+     //font-size: 2vw;
+     overflow: hidden; /* Ensures the content is not revealed until the animation */
+     
+     //white-space: nowrap; /* Keeps the content on a single line */
+     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+     //letter-spacing: .3em; /* Adjust as needed */
+     animation: 
+       typing 3.5s steps(30, end),
+       blink-caret .5s step-end infinite;
+   }
+   
+   /* The typing effect */
+   @keyframes typing {
+     from { width: 0 }
+     to { width: 100% }
+   }
+   
+   /* The typewriter cursor effect */
+   
 
 
 /* Texte */
-p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1.6rem 1rem; line-height: 2.2rem;}
+//p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; line-height: 2.2rem;}
 .filter span a{text-transform: uppercase;}
+
+img{filter: drop-shadow(0 0 1rem black);}
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
 .wrapper{width: 100%; min-height: 82vh; display: flex;flex-direction: row;flex-wrap: wrap; justify-content: space-around; text-align: center; padding: 0 10vw;
           & .card, .ct-home{
+               height: 100%;
                background-color: var(--main-bg-color);
-               color: var(--main-txt-color);
+               //color: var(--main-txt-color);
                flex-direction: row;
                flex-wrap: wrap;
                justify-content: space-around;
                border: none;
+               //border: 1px solid red;
+               text-align: center;
           }
-          &.ct-home {width: 100%;display: flex; flex-direction: row;flex-wrap: nowrap}
-          & .row{
-               width: 40%;
-               margin: 2rem 0;
+          .ct-home {width: 80vw;display: flex; flex-direction: row; align-items: center;border-radius: 20px 20px / 20px 20px;
+               & .card-body {
+                    width: 100%;
+                    max-height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    & div{flex-grow: 2;}
+                    & img {width: 4vw;}
+                    & div{margin: 0;}
+               }
+               }
+          .row{
+               margin: 1rem 0;
+               background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+               //border: 1px solid yellow;
+              
           }
           
 }
@@ -118,57 +161,155 @@ p, span{font-size: 1.4rem; text-align: justify;box-sizing: border-box; margin: 1
       
 
 /*border: 4mm ridge rgba(170, 50, 220, .6);*/
+
 /* ***** HEADER ***** */
 .logo{
-     position: fixed; top: 1vh; left: 1vw; width: 120px;margin: 0.3rem 0;
+     position: fixed; top: 10px; left: 10px; width: 80px;margin: 0.3rem 0; z-index: 500;
 }
 
-.top-header{height: 10vh; margin: 0 1rem; display: flex; flex-direction: row; justify-content: space-around; align-items: center;}
+.top-header{width: 100%; height: 15vh; padding: 0 1rem; display: flex; flex-direction: row; justify-content: space-around; align-items: center;}
  
-.social-header{position: fixed; top: 1vh; right: 1vw; width: 8vw; vertical-align: middle; padding: auto; & a img{width: 35px; margin: 0.3rem 0;}
+.social-header{position: fixed; top: 10px; right: 10px; width: 70px; vertical-align: middle; padding: auto;z-index: 500; & a img{width: 50%; margin: 0.4rem 0;}
 }
-/*  BT-Tools ***** */
 
+
+/*  BT-Tools / Modal ***** */
 #minimodal {
      
-     width:200px; margin:10px;
-     background-color:rgba(233, 230, 213, 0.5); color:green;
-     //border-radius: 10px;
-     /*display:none;*/
+     width:300px; border-radius: 10px 10px 10px 10px; font-size: 0.6rem; overflow: visible;
+     background-color:rgba(233, 230, 213, 0.5);
+     &div{
+          margin: 0;
+          padding: 6%;
+     } 
      opacity: 0;
+     display:none;
+     
      -webkit-transition: opacity 0.3s ease-in-out;
      transition: opacity 0.3 ease-in-out;
 }
 #minimodal.fade {
       opacity:1;
+      display: block;   
 }
 
-
-
-
+/*  BT-Themes ***** */
+.toggle_switch{
+     width: 30px;
+     height: 45px;
+     position: relative;    
+}   
+input[type="checkbox"].switch_3{
+     -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+     outline: 0;
+     z-index: 1;
+}   
+svg.checkbox .outer-ring{
+     stroke-dasharray: 375;
+     stroke-dashoffset: 375;
+     -webkit-animation: resetRing .35s ease-in-out forwards;
+             animation: resetRing .35s ease-in-out forwards;
+}   
+input[type="checkbox"].switch_3:checked + svg.checkbox .outer-ring{
+     -webkit-animation: animateRing .35s ease-in-out forwards;
+             animation: animateRing .35s ease-in-out forwards;
+}   
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_checked{
+     opacity: 1;
+     -webkit-transform: translateX(0) rotate(0deg);
+             transform: translateX(0) rotate(0deg);
+}   
+input[type="checkbox"].switch_3:checked + svg.checkbox .is_unchecked{
+     opacity: 0;
+     -webkit-transform: translateX(-200%) rotate(180deg);
+             transform: translateX(-200%) rotate(180deg);
+}   
+svg.checkbox{
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+}  
+svg.checkbox .is_checked{
+     opacity: 0;
+     fill: yellow;
+     -webkit-transform-origin: 50% 50%;
+             transform-origin: 50% 50%;
+     -webkit-transform: translateX(200%) rotate(45deg);
+             transform: translateX(200%) rotate(45deg);
+     -webkit-transition: all .35s;
+     transition: all .35s;
+} 
+svg.checkbox .is_unchecked{
+     opacity: 1;
+     fill: #fff;
+     -webkit-transform-origin: 50% 50%;
+             transform-origin: 50% 50%;
+     -webkit-transform: translateX(0) rotate(0deg);
+             transform: translateX(0) rotate(0deg);
+     -webkit-transition: all .35s;
+     transition: all .35s;
+} 
+@-webkit-keyframes animateRing{
+     to{
+       stroke-dashoffset: 0;
+       stroke: #b0aa28;
+     }
+}   
+@keyframes animateRing{
+     to{
+       stroke-dashoffset: 0;
+       stroke: #b0aa28;
+     }
+}   
+@-webkit-keyframes resetRing{
+     to{
+       stroke-dashoffset: 0;
+       stroke: #233043;
+     }
+}  
+@keyframes resetRing{
+     to{
+       stroke-dashoffset: 0;
+       stroke: #233043;
+     }
+}
 
 /*  NAV ***** */
 nav{
-     width:65vw;
+     width:100%;
+     height:100%;
      margin: auto; 
-     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.342) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
      & ul {
           border: none;
           text-align: center;
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 1px 0px 0 rgba(255, 255, 255, 0.6);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
           & li {display: inline-block;
                & a {
                     padding: 18px;
                     font-family: "BalsamiqSans-Regular";
                     text-transform:uppercase;
-                    color: #C9D5D5;
                     font-size: 18px;
                     text-decoration: none;
                     display: block;
                     &:hover {
-                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); color: rgba(0, 35, 122, 0.7);}
+                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1);}
                     &:active {
-                         box-shadow: 0 0 10px rgba(81, 103, 128, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); color: rgba(11, 63, 192, 0.7);}
+                         box-shadow: 0 0 10px rgba(81, 103, 128, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); }
                }
           }
      }
@@ -249,10 +390,7 @@ main{display: flex; flex-direction: row; justify-content: space-around;}
 
 /* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 
-/* ------ PAGE GALERIE ---------------------------------------------------------------------------- */
 
-
-/* ------ FIN PAGE GALERIE ---------------------------------------------------------------------------- */
 
 /* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
 
@@ -266,38 +404,204 @@ main{display: flex; flex-direction: row; justify-content: space-around;}
 
 
 /* ***** FOOTER ***** */
-footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: flex-end;flex-wrap: nowrap; }
+footer{box-sizing: border-box; padding: 2rem 0; max-height: 10vh;   display: flex; flex-direction: row; justify-content: flex-end; }
 //border: 0.1rem solid red; 
-.footer-mentions{ width: 40%;display: flex; flex-wrap: nowrap; justify-content: space-between; & a{width: 30%; display: inline-block; text-align: center; margin: auto;}}
+.footer-mentions{ width: 42%;display: flex;  justify-content: space-between; & a{width: 30%; display: inline-block; text-align: center; margin: 0; font-size: 0.8rem; }}
  
 /* ***** FIN FOOTER ***** */
 
 /* ***** THEMES ***** */
 .dark-mode {
      background: none;
-     background-color: purple;
-     color: white;
+     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+     color: black;
 
-     .logo {
-          background: red;
-     }
-     }
+     a{color: black;}
+
+}
 /* ***** FIN THEMES ***** */
 /* -------------------------------------- STATES -------------------------------------- */
 
 
 /* -------------------------------------- THEMES -------------------------------------- */
-
+.site-nav {
+     position: absolute;
+     top: 100%;
+     right: 0%;
+     background: #a6a6a6;
+     height: 0px;
+     overflow: hidden;
+ }
+ 
+ .site-nav-open {
+     height: auto;
+     width:100%;
+ }
+ 
+ .site-nav ul {
+     margin: 0 auto;
+     padding: 0 ;
+     list-style: none;  /* Removes li bullets */
+ }
+ 
+ .site-nav li {
+     border-bottom: 1px solid #8c8c8c;  /* border beneath nav li */
+ }
+ 
+ .site-nav li:last-child {     /* removes border from last nav li */
+     border: none;
+ }
+ 
+ .site-nav a {            /* Displays nav links as block for smaller screens */
+     color: #f2f2f2;
+     display: block;
+     padding: 2em 2em 2em 1.5em;  /* padding for links */
+     text-transform: uppercase;
+     text-decoration: none;
+ }
+ 
+ .site-nav a:hover,         /* hover is for computers and focus is for mobile */
+ .site-nav a:focus {
+     background: #00b3b3;
+     color: #4d4d4d;
+ }
+ 
+ /*--------------------------------------*/
+ /*   ICON styling for smaller screens   */
+ /*--------------------------------------*/ 
+ 
+ .site-nav-icon  {
+     display: inline-block;   /* allows margin changes */
+     font-size: 1.5em;
+     margin-right: 1em;
+     width: 1em;           /* width lines the icons up */
+     text-align: right;  
+     color: rgba(255, 255, 255, .35);  /* white with low opacity to make icons less bright */
+ }
+ 
+ /*--------------------------------------*/
+ /* Acts as btn & contains hamburger     */
+ /*--------------------------------------*/
+ 
+ .menu-toggle {
+     padding: 1em;
+     position: absolute;
+     top: 1.7em;
+     right: 1em;
+     cursor: pointer;
+ }
+ 
+ 
+ /*--------------------------------------*/
+ /*   Styles the hamburger for btn       */
+ /*--------------------------------------*/
+ 
+ .hamburger,
+ .hamburger::before,
+ .hamburger::after {
+     content:'';
+     display: block;
+     background: #00b3b3;
+     height: 3px;
+     width: 1.75em;
+     border-radius: 2px;
+     transition: all ease-in-out 500ms;
+ }
+ 
+ /*--------------------------------------*/
+ /* Instance of hamburger (top line)     */
+ /*--------------------------------------*/
+ 
+ .hamburger::before {
+     transform: translateY(-7px);
+ }
+ 
+ /*--------------------------------------*/
+ /* Instance of hamburger bottom line    */
+ /*--------------------------------------*/
+ 
+ .hamburger::after {
+     transform: translateY(4px);
+ }
+ 
+ /*--------------------------------------*/
+ /* When Nav menu is open, hamburger = X */
+ /*--------------------------------------*/
+ 
+ .open .hamburger {
+     transform: rotate(45deg);
+     background: #ffc299;
+ }
+ 
+ /*--------------------------------------*/
+ /* Before hamburger line is invisible   */
+ /*--------------------------------------*/
+ .open .hamburger::before {
+     opacity: 0;            
+ }
+ 
+ /*--------------------------------------*/
+ /* Animates after line to create an X   */
+ /*--------------------------------------*/
+ .open .hamburger::after {
+     transform: translateY(-3px) rotate(-90deg);
+     background: #ffc299;
+ }
+ 
+ 
+ 
+ 
+ /*--------------------------------------*/
+ /*    For Device (Screens > 700px )     */
+ /*--------------------------------------*/
+ @media (min-width:700px) {
+ 
+     .menu-toggle {       /* Removes hamburger menu */
+         display: none;
+     }
+ 
+     .site-nav {         /* Positions site nav & removes background color */
+         height: auto;
+         position: relative;
+         background: transparent;
+         float: right;
+         font-weight: 300;
+     }
+ 
+     .site-nav li {               /* inline-block and removes border from bottom */
+         display: inline-block;
+         border: none;
+     }
+ 
+     .site-nav a {       /* Adds spacing between Nav links */
+         padding: 0;
+         margin-left: 3em;
+     }
+ 
+     .site-nav a:hover,      /* Makes link background transparent on hover */
+     .site-nav a:focus {        /* Changes font color to light blue */
+         background: transparent;
+         font-weight: 800;
+         color: #00b3b3;
+     }
+ 
+     .site-nav .site-nav-icon {     /* Removes Font Awesome Icons for larger screens */
+         display: none;
+     }
+ 
+ }
 
 /* -------------------------------------- MEDIA QUERIES -------------------------------------- */
 /* MOBILE  ----------- */
 @media screen and (min-width: 200px) and (max-width: 375px){
+     
+     .footer-mentions{width: 100%;}
     
 }
 
 /* TABLET  ----------- */
 @media screen and (min-width: 376px) and (max-width: 989px){
-    
+     .footer-mentions{width: 100%;}
 }
 
 /* NETBOOK  ----------- */
