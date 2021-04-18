@@ -154,7 +154,7 @@ img {
 /* -------------------------------------- LAYOUT -------------------------------------- */
 /* ***** HEADER ***** */
 header {
-  margin: 0.5rem; }
+  margin: 0 0.5rem; }
 
 .logo {
   position: fixed;
@@ -325,9 +325,7 @@ svg.checkbox .is_unchecked {
       display: block; }
 
 .site-nav a:hover, .site-nav a:focus, .site-nav a:active {
-  color: #13AFF0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1); }
+  color: #13AFF0; }
 
 .site-nav-open {
   height: auto;
@@ -402,7 +400,7 @@ main {
 
 .wrapper {
   width: 100%;
-  max-height: 100vh;
+  min-height: 70%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -414,7 +412,7 @@ main {
   margin: 0.2rem 0;
   padding: 1rem 0;
   width: 90vw;
-  height: 100%;
+  min-height: 70vh;
   border-radius: 10px 10px 10px 10px;
   align-items: center;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 100%);
@@ -434,28 +432,44 @@ main {
   display: flex; }
 
 .img-card-brackets {
-  height: 20em;
-  margin: 0 1rem; }
+  max-height: 100%;
+  margin: 0 5rem;
+  width: 4vw; }
   .img-card-brackets img {
     height: 100%; }
 
 .typewriter {
   overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
   margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
   padding: 0 auto;
-  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite; }
-  .typewriter .tw2 {
-    animation-delay: 7s; }
+  animation: typing 1.5s steps(30, end);
+  animation-fill-mode: both; }
 
-/* The typing effect */
+.tw1 {
+  animation-delay: 0s; }
+
+.tw2 {
+  animation-delay: 1.6s; }
+
+.tw3 {
+  animation-delay: 2.6s; }
+
+.tw4 {
+  animation-delay: 3s; }
+
+.tw5 {
+  animation-delay: 3.4s; }
+
+.tw6 {
+  animation-delay: 4s; }
+
 @keyframes typing {
   from {
-    width: 0; }
+    width: 0;
+    display: none; }
   to {
-    width: 100%; } }
-/* The typewriter cursor effect */
+    width: 100%;
+    display: block; } }
 /* ***** FIN MAIN ***** */
 /* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 /* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
@@ -481,6 +495,10 @@ main {
 /* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 /* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 /* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+fieldset label, fieldset input {
+  display: block;
+  margin: 0.3rem auto; }
+
 /* ------ FIN PAGE FORMULAIRE ---------------------------------------------------------------------------- */
 /* ***** FIN MAIN ***** */
 /* ***** FOOTER ***** */
@@ -563,7 +581,6 @@ footer {
 
   .site-nav a:hover, .site-nav a:focus, .site-nav a:active {
     /* Changes font color to light blue */
-    background: transparent;
     font-weight: 800;
     color: #13AFF0; } }
 /* NETBOOK  ----------- */

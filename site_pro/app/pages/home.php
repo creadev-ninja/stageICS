@@ -1,14 +1,16 @@
-<div class="card mb-3 theme-light" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="medias/images/portrait_base.png" alt="portrait">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+    <div class="row">
+        <div class="img-card">
+          <img src="medias/images/dessin portraitv2-2021.svg" alt="drawn portrait of christelle Barret by Crypto Beasty">
+        </div>
+        <div class="card-body">
+          <section id="tw">
+            <div class="typewriter tw1"><h1>christelle</h1></div>
+            <div class="typewriter tw2"><h2>Barret</h2></div>
+            <div class="typewriter tw3"><h4>Crypto&nbspBeasty</h4></div>
+            <div class="typewriter tw4"><h3>web</h3></div>
+            <div class="typewriter tw5"><h3>Developpeur</h3></div>
+            <div class="typewriter tw6"><h3>Designer</h3></div>
+          </section>
+        </div>
+    </div>   
