@@ -36,7 +36,6 @@
     
 </head>
 <body>
-     <div class="bwrapper">
 <!-- ***** HEADER ***** -->     
      <header>
      <?php include("_default_header.php"); ?>
@@ -44,16 +43,16 @@
      </header>
 <!-- ***** CONTENT ***** -->
      <div class="wrapper"> 
+    
           <main>
                <?php echo $content; ?>     
           </main>
           
      </div>
 <!-- ***** FIN FOOTER ***** -->
-     <footer class="txt-gold">
+<footer class="txt-gold">
           <?php include("_default_footer.php"); ?>        
-     </footer>
-     </div>
+</footer>
 <!-- ********** JS ********** -->
 <!-- jQuery and Bootstrap Bundle (includes Popper) 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

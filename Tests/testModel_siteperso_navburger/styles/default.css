@@ -148,7 +148,7 @@ h4 {
   text-transform: uppercase; }
 
 img {
-  filter: drop-shadow(0 0 1rem black);
+  filter: drop-shadow(0 0 1rem #020202);
   height: 100%; }
 
 /* -------------------------------------- LAYOUT -------------------------------------- */
@@ -190,17 +190,15 @@ header {
 /*  BT-Tools / Modal ***** */
 #minimodal {
   width: 300px;
-  border-radius: 10px 10px 10px 10px;
-  font-size: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
   overflow: visible;
   background-color: rgba(233, 230, 213, 0.5);
+  padding: 0.5rem;
   opacity: 0;
   display: none;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3 ease-in-out; }
-  #minimodaldiv {
-    margin: 0;
-    padding: 6%; }
 
 #minimodal.fade {
   opacity: 1;
@@ -302,12 +300,12 @@ svg.checkbox .is_unchecked {
   padding: 1rem auto;
   position: absolute;
   top: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 30%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.75) 30%, rgba(255, 255, 255, 0.95) 70%, rgba(255, 255, 255, 0.1) 100%);
   height: 0px;
   overflow: hidden; }
   .site-nav ul {
     border: none;
-    padding: 1rem 0;
+    padding: 3rem 0;
     text-align: center;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); }
     .site-nav ul li :last-child {
@@ -319,7 +317,7 @@ svg.checkbox .is_unchecked {
       /* padding for links */
       margin-top: 1rem;
       font-family: "BalsamiqSans-Regular";
-      color: black;
+      color: #020202;
       text-transform: uppercase;
       text-decoration: none;
       display: block; }
@@ -409,7 +407,6 @@ main {
   margin-top: 2rem; }
 
 .row {
-  margin: 0.2rem 0;
   padding: 1rem 0;
   width: 90vw;
   min-height: 70vh;
@@ -417,12 +414,14 @@ main {
   align-items: center;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0) 100%);
   display: flex;
-  flex-direction: raw;
   justify-content: space-around; }
   .row .img-card {
-    width: 30%; }
-    .row .img-cardimg {
-      max-width: 100%; }
+    width: 30%;
+    height: auto;
+    margin: 0  2%; }
+    .row .img-card img {
+      max-width: 100%;
+      height: 112.70%; }
   .row .card-body section {
     margin: auto 0;
     text-align: center;
@@ -495,9 +494,38 @@ main {
 /* ------ PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 /* ------ FIN PAGES ELECTRICITE CLIMATISATION PLOMBERIE ---------------------------------------------------------------------------- */
 /* ------ PAGE FORMULAIRE ---------------------------------------------------------------------------- */
+.img-form {
+  width: 8%;
+  margin: 0 5%; }
+
+.card-body-form {
+  flex-grow: 2;
+  padding: 0 6%;
+  margin: 2rem auto 0 auto; }
+
+form {
+  margin: 0 auto; }
+
 fieldset label, fieldset input {
-  display: block;
-  margin: 0.3rem auto; }
+  display: block; }
+  fieldset label span, fieldset input span {
+    color: #d6a956; }
+fieldset input {
+  height: 3rem; }
+fieldset input, fieldset textarea {
+  text-align: center;
+  margin: 0.6rem auto 1.5rem auto;
+  width: 100%;
+  background-color: rgba(0, 20, 20, 0.6);
+  border-radius: 6px;
+  color: #C9D5D5;
+  border: none; }
+fieldset .submit {
+  width: 30%;
+  color: #d6a956; }
+fieldset .submit:hover {
+  background-color: rgba(214, 169, 86, 0.6);
+  color: #020202; }
 
 /* ------ FIN PAGE FORMULAIRE ---------------------------------------------------------------------------- */
 /* ***** FIN MAIN ***** */
@@ -519,24 +547,81 @@ footer {
     display: inline-block;
     text-align: center;
     margin: 0;
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem; }
+  .footer-mentions .login {
+    cursor: no-drop; }
 
 /* ***** FIN FOOTER ***** */
 /* ***** THEMES ***** */
 .dark-mode {
   background: none;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
-  color: black; }
-  .dark-mode a {
-    color: black; }
-  .dark-mode img {
-    filter: none;
-    height: 100%; }
+  background: linear-gradient(-45deg, #9b9b9b 3%, #646464 13%, #4e4e4e 24%, #646464 30%, #9b9b9b 41%, #979797 50%, #979797 61%, #9b9b9b 74%, #646464 81%, #3f3f3f 87%, #4e4e4e 100%);
+  /* Body animation*/
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: gradient 180s ease infinite;
+  animation-direction: alternate;
+  color: #020202; }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+  .dark-mode header .logo {
+    width: 85px; }
+  .dark-mode header .social-header {
+    width: 75px; }
+  .dark-mode header .logo, .dark-mode header .social-header, .dark-mode header #minimodal {
+    background-color: rgba(0, 20, 20, 0.4);
+    border-radius: 6px;
+    padding: 0.3rem; }
+  .dark-mode header #minimodal label {
+    color: #C9D5D5; }
+  .dark-mode header .site-nav a {
+    color: #020202; }
+  .dark-mode header .site-nav a:hover {
+    color: #13AFF0; }
+  .dark-mode h4, .dark-mode .footer-mentions a {
+    color: #020202; }
 
 /* ***** FIN THEMES ***** */
 /* -------------------------------------- MEDIA QUERIES -------------------------------------- */
 /* MOBILE  ----------- */
 @media screen and (max-width: 799px) {
+  .logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    margin: 0.3rem 0;
+    z-index: 200; }
+
+  .top-header {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 0;
+    z-index: 500; }
+
+  .social-header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 70px;
+    vertical-align: middle;
+    padding: auto;
+    z-index: 200; }
+    .social-header a img {
+      width: 50%;
+      margin: 0.4rem 0; }
+
   .row {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -546,7 +631,7 @@ footer {
       .row .img-card img {
         width: 50%;
         margin: 1rem auto; }
-    .row .img-card-brackets {
+    .row .img-card-brackets, .row .img-form {
       display: none; }
     .row .card-body section {
       margin: 1rem 0; }
@@ -569,20 +654,20 @@ footer {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.342) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
     float: right;
     z-index: 1000; }
-    .site-nav ul li {
-      display: inline-block;
-      border: none; }
-      .site-nav ul li a {
-        /* Adds spacing between Nav links */
-        padding: 0;
-        margin-left: 3em;
-        margin-top: 0;
-        color: #C9D5D5; }
+    .site-nav ul {
+      padding: 1rem 0; }
+      .site-nav ul li {
+        display: inline-block;
+        border: none; }
+        .site-nav ul li a {
+          /* Adds spacing between Nav links */
+          padding: 0;
+          margin-left: 3em;
+          margin-top: 0;
+          color: #C9D5D5; }
 
-  .site-nav a:hover, .site-nav a:focus, .site-nav a:active {
-    /* Changes font color to light blue */
-    font-weight: 800;
-    color: #13AFF0; } }
+  form {
+    width: 60%; } }
 /* NETBOOK  ----------- */
 /* DESKTOP  ----------- */
 /* Long life and prosper */

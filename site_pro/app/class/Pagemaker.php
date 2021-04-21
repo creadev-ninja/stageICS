@@ -25,6 +25,7 @@ class Pagemaker extends Router{
                case 'portfolio' : $name = "portfolio"; break;
                case 'contact' : $name = "contact"; break;
                case 'adn' : $name = "adn"; break;
+               case 'login' : $name = "login"; break;
                default : $name = "home";
           }
 

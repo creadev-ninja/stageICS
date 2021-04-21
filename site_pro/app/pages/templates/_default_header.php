@@ -4,18 +4,10 @@
       <div class="top-header">       
         <nav class="site-nav">
           <ul>
-              <li>
-                  <a href="index">Home</a>
-              </li>
-              <li>
-                  <a href="adn">ADN</a>
-              </li>
-              <li>
-                  <a href="portfolio">Portfolio</a>
-              </li>
-              <li>
-                  <a href="contact">Contact</a>
-              </li>
+              <li><a href="index">Home</a></li>
+              <li><a href="adn">ADN</a></li>
+              <li><a href="portfolio">Portfolio</a></li>
+              <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
 <!-- Menu btn that toggles onClick and changes appearance ( .menu-toggle CSS ) -->
@@ -33,6 +25,7 @@
             <img src="medias/images/tool-button-w.svg" alt="logo parametres"class="parametres">
           </a>
           <div id="minimodal" class="minimodal">
+                <label for="scales">Color Theme</label>
                 <div class="toggle_switch">
                   <input type="checkbox" class="switch_3" id="darktheme" name="darktheme">
                   <svg class="checkbox" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="0 0 168 80">
@@ -41,7 +34,6 @@
                        <path class="is_checked" d="M17 39.482c0-12.694 10.306-23 23-23s23 10.306 23 23-10.306 23-23 23-23-10.306-23-23z"/>
                   </svg>
                 </div>
-                <label for="scales">Color Theme</label>
           </div>  
           <div><a href="https://www.linkedin.com/in/christelleb-cryptobeasty/"><img src="medias/images/linkedin.svg" alt="logo Linkedin par Freepik "></a></div>
           <div><a href="https://github.com/BARRETCHRIS"><img src="medias/images/GitHub-Mark-Light-64px.png" alt="logo GitHub"></a></div>
